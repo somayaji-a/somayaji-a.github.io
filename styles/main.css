@@ -324,7 +324,9 @@ section { padding: 100px 0; }
   background-clip: text;
 }
 
+/* .hero-statement is a <p> (the h1 is the name byline), so it carries its own display styling */
 .hero-statement {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2.4rem, 6vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -786,6 +788,100 @@ section { padding: 100px 0; }
 }
 
 /* =============================================
+   WRITING
+   ============================================= */
+#writing {
+  background: var(--bg);
+  position: relative;
+}
+#writing::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--gradient);
+  opacity: 0.2;
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 48px;
+}
+
+.writing-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  backdrop-filter: blur(10px);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+.writing-card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+}
+
+.writing-meta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.writing-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.writing-card p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.writing-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan);
+  letter-spacing: 0.03em;
+}
+.writing-link i {
+  font-size: 0.7rem;
+  margin-left: 6px;
+  transition: transform var(--transition);
+}
+.writing-card:hover .writing-link i { transform: translateX(4px); }
+
+.writing-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.writing-alt {
+  font-size: 0.875rem;
+  color: var(--text-faint);
+}
+.writing-alt a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-decoration-color: rgba(34, 211, 238, 0.3);
+  transition: text-decoration-color var(--transition);
+}
+.writing-alt a:hover { text-decoration-color: var(--cyan); }
+
+/* =============================================
    WORK WITH ME
    ============================================= */
 #advisory {
@@ -1021,6 +1117,7 @@ footer {
   .timeline-right { padding-left: 0; }
 
   .education-grid { grid-template-columns: 1fr; }
+  .writing-grid { grid-template-columns: 1fr; }
   .advisory-grid { grid-template-columns: 1fr; }
 }
 

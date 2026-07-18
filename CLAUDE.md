@@ -13,8 +13,10 @@ A static personal resume/portfolio site hosted on GitHub Pages. There is no buil
 - `scripts/main.js` — jQuery-based: AOS initialization, smooth-scroll, and a countTo animation plugin
 - `css/` — vendor CSS (Bootstrap 4, AOS)
 - `js/` — vendor JS (AOS, Now UI Kit, jQuery plugins)
-- `images/` — profile photo and background images
+- `images/` — profile photo and background images; `og-image.png` is the 1200×630 social-share card referenced by the Open Graph tags
 - `files/` — static assets for download (e.g. `resume.pdf`)
+- `robots.txt` / `sitemap.xml` — SEO crawler files; bump `<lastmod>` in the sitemap when content changes
+- `index.html` `<head>` carries the SEO surface: canonical URL, Open Graph/Twitter meta, and a JSON-LD Person/WebSite/ProfilePage graph — keep these in sync when titles, roles, or social links change
 
 ## Development
 
